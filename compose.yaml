@@ -1,0 +1,15 @@
+volumes:
+  rabbitmq_data:
+
+services:
+  ####################################
+  # Atomic Microservice: FoodRescue
+  ####################################
+  workshop:
+    build:
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - ".env"
+    ports:
+      - "30000:8080"
